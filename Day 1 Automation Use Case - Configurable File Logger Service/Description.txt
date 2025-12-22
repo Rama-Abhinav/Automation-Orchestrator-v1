@@ -1,0 +1,54 @@
+Create a Logger class:
+
+    Attributes:
+
+        file_path (where logs are stored)
+
+        log_level (INFO, WARNING, ERROR)
+
+    Methods:
+
+        log(message, level) → Writes to file only if level >= current log_level
+            log(message, level) method
+
+                This method does three things:
+
+                > Checks if the message level is allowed
+
+                > Formats the message
+
+                > Writes it to the file
+
+        read_logs() → Reads and prints existing logs
+            This method:
+
+                > Opens the same file
+
+                > Reads stored logs
+
+                > Outputs them
+
+    Constructor (__init__)
+
+        > Initialize file path and log level
+
+        > Validate inputs
+
+            The constructor answers one question:
+
+                “What must be true for this object to exist safely?”
+
+                    For the Logger:
+
+                    File path must be a valid string
+
+                    Log level must be a known level
+
+Sample Input :-
+logger = Logger("logs/automation.log", "INFO")
+
+logger.log("Automation started", "INFO")
+logger.log("API rate limit nearing", "WARNING")
+logger.log("API authentication failed", "ERROR")
+
+logger.read_logs()
